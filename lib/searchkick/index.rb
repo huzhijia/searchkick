@@ -135,6 +135,7 @@ module Searchkick
     end
 
     def remove(record)
+      puts "remove 方法"
       bulk_indexer.bulk_delete([record])
     end
 
@@ -143,6 +144,7 @@ module Searchkick
     end
 
     def bulk_delete(records)
+      puts "bulk_delete 方法"
       bulk_indexer.bulk_delete(records)
     end
 
