@@ -45,6 +45,7 @@ module Searchkick
 
     def bulk_delete(records)
       puts "bulk_reindex queue"
+      byebug
       Searchkick.indexer.queue(records.reject { |r| r.id.blank? }.map { |r| RecordData.new(index, r).delete_data })
     end
 
