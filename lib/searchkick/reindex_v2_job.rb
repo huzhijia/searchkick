@@ -11,6 +11,7 @@ module Searchkick
 
     def perform(klass, id, method_name = nil, routing: nil)
       model = klass.constantize
+      beybug
       record =
         begin
           if model.respond_to?(:unscoped)
