@@ -135,8 +135,7 @@ module Searchkick
     end
 
     def remove(record)
-      puts "remove 方法  sads "
-      byebug
+      puts "remove 方法  "
       bulk_indexer.bulk_delete([record])
     end
 

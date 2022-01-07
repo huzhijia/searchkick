@@ -11,7 +11,6 @@ module Searchkick
 
     def perform(klass, id, method_name = nil, routing: nil)
       model = klass.constantize
-      byebug
       record =
         begin
           if model.respond_to?(:unscoped)
@@ -27,7 +26,7 @@ module Searchkick
         end
 
       unless record
-        record = model.new
+        record = model.unscoped.new
         record.id = id
         if routing
           record.define_singleton_method(:search_routing) do
